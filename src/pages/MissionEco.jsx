@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
 
 export default function MissionEco() {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    function handleMessage(e) {
+      if (iframeRef.current && typeof e.data === 'number') {
+        iframeRef.current.style.height = e.data + 'px';
+      }
+    }
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
   return (
     <>
       <style>{`
@@ -49,7 +61,7 @@ export default function MissionEco() {
         .mission-eco .primary { background: #00a3da; color: #fff; box-shadow: 0 15px 35px rgba(0,163,218,0.35); }
         .mission-eco .btn:hover { transform: translateY(-4px); }
 
-        .mission-eco .impact { width: 100%; padding: 0 7%; background: #f8fbfd; }
+        .mission-eco .impact { width: 100%; padding-top: 60px; padding-right: 7%; padding-bottom: 60px; padding-left: 7%; background: #f8fbfd; }
         .mission-eco .box { max-width: 1100px; margin: auto; display: flex; justify-content: center; align-items: center; gap: 25px; flex-wrap: wrap; }
         .mission-eco .card {
           background: #fff; padding: 30px 25px; border-radius: 22px; min-width: 200px;
@@ -175,7 +187,7 @@ export default function MissionEco() {
           <div className="hero-content">
             <div className="hero-left">
               <span className="tag">Mission Eco Warriors</span>
-              <h1>Turning Plastic Bottles Into A Cleaner Future</h1>
+              <h1><b>Turning Plastic Bottles Into A Cleaner Future</b></h1>
               <p>
                 Mission Eco Warriors by Being Sevak promotes cleanliness and recycling
                 by installing Bottle Crusher Machines at metro stations and public places
@@ -186,10 +198,19 @@ export default function MissionEco() {
               </div>
             </div>
             <div className="hero-right">
-              <img src="/images/eco1.jpg" alt="Eco Warriors" />
+              <img src="/images/eco main..jpg" alt="Eco Warriors" />
             </div>
           </div>
         </section>
+
+        <div id="donate" style={{ width: '100%', background: '#f4f7fb', padding: '0', overflow: 'hidden', marginBottom: '0', position: 'relative', zIndex: 10, isolation: 'isolate' }}>
+          <iframe
+            ref={iframeRef}
+            src="/donations/donation-ecowarriors.html"
+            style={{ width: '100%', height: '650px', border: 'none', display: 'block', marginBottom: '-1px' }}
+            title="Donate to Mission Eco Warriors"
+          />
+        </div>
 
         <section className="impact">
           <div className="box">
