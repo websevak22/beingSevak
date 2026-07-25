@@ -4914,7 +4914,7 @@ body{
   .single-image-box { max-width: 100%; }
   .about-img { border-radius: 16px; transform: none; }
   .causes-track .cause-card { width: 240px; }
-  .causes-track { animation: scrollActivities 20s linear infinite; }
+  .causes-track { animation: scrollActivities 30s linear infinite; }
   .metro-section { padding: 40px 4%; }
   .metro-box { gap: 25px; }
   .metro-hero-img img { height: 200px; }

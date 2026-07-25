@@ -18,6 +18,8 @@ export default function Home() {
   const [basketEmail, setBasketEmail] = useState('');
   const [showEmptyMsg, setShowEmptyMsg] = useState(false);
   const [basketPhoneErr, setBasketPhoneErr] = useState('');
+  const [basketNameErr, setBasketNameErr] = useState('');
+  const [basketEmailErr, setBasketEmailErr] = useState('');
 
   // Hero Slider
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -100,24 +102,35 @@ export default function Home() {
   };
 
   const handleBasketPhoneChange = (e) => {
-    const val = e.target.value;
-    if (!/^[0-9]*$/.test(val)) {
-      setBasketPhoneErr('Only numeric characters accept');
-      setTimeout(() => setBasketPhoneErr(''), 2000);
-      return;
-    }
+    let val = e.target.value.replace(/[^0-9]/g, '');
     if (val.length > 10) {
-      setBasketPhoneErr('Only 10 digits allowed');
+      val = val.slice(0, 10);
+      setBasketPhoneErr('Phone number must contain 10 digits.');
       setTimeout(() => setBasketPhoneErr(''), 2000);
       return;
     }
     setBasketPhone(val);
-    if (val.length === 10 && !/^[6-9]/.test(val)) {
-      setBasketPhoneErr('Mobile number must start with 6, 7, 8 or 9');
-      setTimeout(() => setBasketPhoneErr(''), 2000);
-    } else {
-      setBasketPhoneErr('');
+    setBasketPhoneErr('');
+  };
+
+  const handleBasketNameChange = (e) => {
+    const val = e.target.value;
+    if (/[^a-zA-Z\s]/.test(val)) {
+      setBasketNameErr('Invalid name');
+      setTimeout(() => setBasketNameErr(''), 2000);
+      return;
     }
+    setBasketName(val);
+    setBasketNameErr('');
+  };
+
+  const handleBasketEmailChange = (e) => {
+    const val = e.target.value;
+    if (/[^a-zA-Z0-9@.]/.test(val)) {
+      return;
+    }
+    setBasketEmail(val);
+    setBasketEmailErr('');
   };
 
   const openModal = (idx) => {
@@ -1421,13 +1434,15 @@ export default function Home() {
           <div className="basket-divider"></div>
           <div className="basket-personal">
             <h3 className="basket-section-title">Your Details</h3>
-            <input type="text" className="basket-input" placeholder="Enter your name" value={basketName} onChange={e => setBasketName(e.target.value)} />
+            <input type="text" className="basket-input" placeholder="Enter your name" value={basketName} onChange={handleBasketNameChange} />
+            {basketNameErr && <span className="basket-field-err">{basketNameErr}</span>}
             <div className="basket-phone-row">
               <span className="phone-flag">&#127470;&#127475; +91</span>
               <input type="tel" className="basket-input phone-inp" placeholder="Phone number" value={basketPhone} onChange={handleBasketPhoneChange} />
             </div>
             {basketPhoneErr && <span className="basket-field-err">{basketPhoneErr}</span>}
-            <input type="email" className="basket-input" placeholder="Enter your email" value={basketEmail} onChange={e => setBasketEmail(e.target.value)} />
+            <input type="email" className="basket-input" placeholder="Enter your email" value={basketEmail} onChange={handleBasketEmailChange} />
+            {basketEmailErr && <span className="basket-field-err">{basketEmailErr}</span>}
           </div>
           <div className="basket-checkboxes">
             <label className="basket-check"><input type="checkbox" /> Send me impact updates via email</label>

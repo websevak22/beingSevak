@@ -11,6 +11,15 @@ const ContactUs = () => {
     message: ''
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [firstNameErr, setFirstNameErr] = useState('');
+  const [lastNameErr, setLastNameErr] = useState('');
+  const [phoneErr, setPhoneErr] = useState('');
+  const [emailErr, setEmailErr] = useState('');
+  const [messageErr, setMessageErr] = useState('');
+
+  const showError = (setter) => {
+    setTimeout(() => setter(''), 2000);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -47,7 +56,7 @@ const ContactUs = () => {
       setFormData({ ...formData, firstName: val });
       setFirstNameErr('');
     } else {
-      setFirstNameErr('Only alphabetical letters accept');
+      setFirstNameErr('Invalid name');
       showError(setFirstNameErr);
     }
   };
@@ -58,20 +67,31 @@ const ContactUs = () => {
       setFormData({ ...formData, lastName: val });
       setLastNameErr('');
     } else {
-      setLastNameErr('Only alphabetical letters accept');
+      setLastNameErr('Invalid name');
       showError(setLastNameErr);
     }
+  };
+
+  const handleEmailChange = (e) => {
+    const val = e.target.value;
+    if (val && !/^[A-Za-z0-9@.]+$/.test(val)) {
+      setEmailErr('Invalid email');
+      showError(setEmailErr);
+      return;
+    }
+    setFormData({ ...formData, email: val });
+    setEmailErr('');
   };
 
   const handlePhoneChange = (e) => {
     const val = e.target.value;
     if (!/^[0-9]*$/.test(val)) {
-      setPhoneErr('Only numeric characters accept');
+      setPhoneErr('Invalid');
       showError(setPhoneErr);
       return;
     }
     if (val.length > 10) {
-      setPhoneErr('Only 10 digits allowed');
+      setPhoneErr('Phone number must contain 10 digits.');
       showError(setPhoneErr);
       return;
     }
@@ -79,6 +99,8 @@ const ContactUs = () => {
     if (val.length === 10 && !/^[6-9]/.test(val)) {
       setPhoneErr('Mobile number must start with 6, 7, 8 or 9');
       showError(setPhoneErr);
+    } else if (val.length > 0 && val.length < 10) {
+      setPhoneErr('Phone number must contain 10 digits.');
     } else {
       setPhoneErr('');
     }
@@ -261,21 +283,25 @@ const ContactUs = () => {
                 <div className="form-row">
                   <div className="form-group">
                     <label>First Name <span className="req">*</span></label>
-                    <input type="text" id="cf_name" name="firstName" placeholder="Your first name" value={formData.firstName} onChange={handleChange} required />
+                    <input type="text" id="cf_name" name="firstName" placeholder="Your first name" value={formData.firstName} onChange={handleFirstNameChange} required />
+                    {firstNameErr && <span className="field-err">{firstNameErr}</span>}
                   </div>
                   <div className="form-group">
                     <label>Last Name</label>
-                    <input type="text" id="cf_lname" name="lastName" placeholder="Your last name" value={formData.lastName} onChange={handleChange} />
+                    <input type="text" id="cf_lname" name="lastName" placeholder="Your last name" value={formData.lastName} onChange={handleLastNameChange} />
+                    {lastNameErr && <span className="field-err">{lastNameErr}</span>}
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label>Email <span className="req">*</span></label>
-                    <input type="email" id="cf_email" name="email" placeholder="Your email address" value={formData.email} onChange={handleChange} required />
+                    <input type="email" id="cf_email" name="email" placeholder="Your email address" value={formData.email} onChange={handleEmailChange} required />
+                    {emailErr && <span className="field-err">{emailErr}</span>}
                   </div>
                   <div className="form-group">
                     <label>Phone <span className="req">*</span></label>
-                    <input type="tel" id="cf_phone" name="phone" placeholder="Your phone number" value={formData.phone} onChange={handleChange} required />
+                    <input type="tel" id="cf_phone" name="phone" placeholder="Your phone number" value={formData.phone} onChange={handlePhoneChange} required />
+                    {phoneErr && <span className="field-err">{phoneErr}</span>}
                   </div>
                 </div>
                 <div className="form-group">

@@ -3,11 +3,68 @@ import { useState } from 'react';
 
 const Careers = () => {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [volName, setVolName] = useState('');
+  const [volEmail, setVolEmail] = useState('');
+  const [volPhone, setVolPhone] = useState('');
+  const [volNameErr, setVolNameErr] = useState('');
+  const [volEmailErr, setVolEmailErr] = useState('');
+  const [volPhoneErr, setVolPhoneErr] = useState('');
+
+  const showError = (setter) => {
+    setTimeout(() => setter(''), 2000);
+  };
+
+  const handleVolNameChange = (e) => {
+    const val = e.target.value;
+    if (/^[A-Za-z\s]*$/.test(val)) {
+      setVolName(val);
+      setVolNameErr('');
+    } else {
+      setVolNameErr('Invalid name');
+      showError(setVolNameErr);
+    }
+  };
+
+  const handleVolEmailChange = (e) => {
+    const val = e.target.value;
+    if (val && !/^[A-Za-z0-9@.]+$/.test(val)) {
+      setVolEmailErr('Invalid email');
+      showError(setVolEmailErr);
+      return;
+    }
+    setVolEmail(val);
+    setVolEmailErr('');
+  };
+
+  const handleVolPhoneChange = (e) => {
+    const val = e.target.value;
+    if (!/^[0-9]*$/.test(val)) {
+      setVolPhoneErr('Only numeric characters accept');
+      showError(setVolPhoneErr);
+      return;
+    }
+    if (val.length > 10) {
+      setVolPhoneErr('Only 10 digits allowed');
+      showError(setVolPhoneErr);
+      return;
+    }
+    setVolPhone(val);
+    if (val.length === 10 && !/^[6-9]/.test(val)) {
+      setVolPhoneErr('Mobile number must start with 6, 7, 8 or 9');
+      showError(setVolPhoneErr);
+    } else if (val.length > 0 && val.length < 10) {
+      setVolPhoneErr('10 digit number accept only');
+    } else {
+      setVolPhoneErr('');
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccess(true);
-    e.target.reset();
+    setVolName('');
+    setVolEmail('');
+    setVolPhone('');
     setTimeout(() => setShowSuccess(false), 3000);
   };
 
@@ -129,17 +186,20 @@ const Careers = () => {
                 <div className="form-row">
                   <div className="form-group">
                     <label>Full Name <span>*</span></label>
-                    <input type="text" required placeholder="Your full name" onInput={(e) => { const err = e.target.parentElement.querySelector('.field-error'); if (e.target.value && !/^[A-Za-z\s]+$/.test(e.target.value)) { e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, ''); if (!err) { e.target.insertAdjacentHTML('afterend', '<span class="field-error">Invalid name</span>'); setTimeout(() => e.target.parentElement.querySelector('.field-error')?.remove(), 2000); } } else if (err) { err.remove(); } }} />
+                    <input type="text" required placeholder="Your full name" value={volName} onChange={handleVolNameChange} />
+                    {volNameErr && <span className="field-error">{volNameErr}</span>}
                   </div>
                   <div className="form-group">
                     <label>Email <span>*</span></label>
-                    <input type="text" required placeholder="Your email address" onInput={(e) => { const err = e.target.parentElement.querySelector('.field-error'); if (e.target.value && !/^[A-Za-z0-9@.]+$/.test(e.target.value)) { e.target.value = e.target.value.replace(/[^A-Za-z0-9@.]/g, ''); if (!err) { e.target.insertAdjacentHTML('afterend', '<span class="field-error">Invalid email</span>'); setTimeout(() => e.target.parentElement.querySelector('.field-error')?.remove(), 2000); } } else if (err) { err.remove(); } }} />
+                    <input type="email" required placeholder="Your email address" value={volEmail} onChange={handleVolEmailChange} />
+                    {volEmailErr && <span className="field-error">{volEmailErr}</span>}
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label>Phone <span>*</span></label>
-                    <input type="tel" required placeholder="Your phone number" maxLength={10} onInput={(e) => { const err = e.target.parentElement.querySelector('.field-error'); e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10); if (e.target.value && e.target.value.length === 10) { if (!err) { e.target.insertAdjacentHTML('afterend', '<span class="field-error">10 digit number accept only</span>'); setTimeout(() => e.target.parentElement.querySelector('.field-error')?.remove(), 2000); } } else if (err) { err.remove(); } }} />
+                    <input type="tel" required placeholder="Your phone number" value={volPhone} onChange={handleVolPhoneChange} />
+                    {volPhoneErr && <span className="field-error">{volPhoneErr}</span>}
                   </div>
                   <div className="form-group">
                     <label>City</label>

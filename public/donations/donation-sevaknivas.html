@@ -444,6 +444,9 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   .form-header { flex-direction: column; gap: 10px; text-align: center; }
   .form-header-right { text-align: center; }
 }
+.name-error{display:none;color:#e53935;font-size:0.72rem;font-family:'Open Sans',sans-serif;margin-top:4px;background:#fff0f0;border:1px solid #fdd;border-radius:6px;padding:4px 10px;animation:popIn 0.3s ease}
+.name-error.show{display:inline-block}
+@keyframes popIn{0%{opacity:0;transform:translateY(-4px);}100%{opacity:1;transform:translateY(0);}}
 </style>
 </head>
 <body>
@@ -574,15 +577,18 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <div class="form-grid">
       <div class="form-group full">
         <label>Full Name <span class="req">*</span></label>
-        <input type="text" id="donorName" placeholder="Your full name">
+        <input type="text" id="donorName" placeholder="Your full name" oninput="validateName(this,'name-error')" />
+        <span class="name-error" id="name-error">Invalid name</span>
       </div>
       <div class="form-group">
         <label>Email <span class="req">*</span></label>
-        <input type="email" id="donorEmail" placeholder="your@email.com">
+        <input type="email" id="donorEmail" placeholder="your@email.com" oninput="validateEmail(this,'email-error')" />
+        <span class="name-error" id="email-error">Invalid email</span>
       </div>
       <div class="form-group">
         <label>Phone <span class="req">*</span></label>
-        <input type="tel" id="donorPhone" placeholder="+91 9876543210">
+        <input type="tel" id="donorPhone" placeholder="+91 9876543210" oninput="validatePhone(this,'phone-error')" />
+        <span class="name-error" id="phone-error">Phone number must contain 10 digits.</span>
       </div>
       <div class="form-group">
         <label>Address</label>
@@ -696,10 +702,46 @@ function handleDonate() {
 
   donateWithRazorpay({ amount, name, email, phone, description: desc, mission: currentMission });
 }
-</script>
 
-<script>
-  function sendHeight() {
+let nameTimers = {};
+function validateName(el, errorId) {
+  const err = document.getElementById(errorId);
+  if (/[^a-zA-Z\s]/.test(el.value)) {
+    el.value = el.value.replace(/[^a-zA-Z\s]/g, '');
+    err.classList.add('show');
+    clearTimeout(nameTimers[errorId]);
+    nameTimers[errorId] = setTimeout(() => err.classList.remove('show'), 2000);
+  }
+}
+function validateEmail(el, errorId) {
+  const err = document.getElementById(errorId);
+  if (/[^a-zA-Z0-9@.]/.test(el.value)) {
+    el.value = el.value.replace(/[^a-zA-Z0-9@.]/g, '');
+    err.textContent = 'Invalid email';
+    err.classList.add('show');
+    clearTimeout(nameTimers[errorId]);
+    nameTimers[errorId] = setTimeout(() => err.classList.remove('show'), 2000);
+    return;
+  }
+  err.classList.remove('show');
+}
+function validatePhone(el, errorId) {
+  const err = document.getElementById(errorId);
+  if (/[^0-9]/.test(el.value)) {
+    el.value = el.value.replace(/[^0-9]/g, '');
+    return;
+  }
+  if (el.value.length > 10) {
+    el.value = el.value.slice(0, 10);
+    err.textContent = 'Phone number must contain 10 digits.';
+    err.classList.add('show');
+    clearTimeout(nameTimers[errorId]);
+    nameTimers[errorId] = setTimeout(() => err.classList.remove('show'), 2000);
+    return;
+  }
+  err.classList.remove('show');
+}
+</script>
     var h = document.body.scrollHeight;
     parent.postMessage(h, '*');
   }
