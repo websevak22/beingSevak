@@ -142,14 +142,14 @@ const CSR = () => {
         <div className="csr-highlight">
           <h2>Partner With Us</h2>
           <div className="csr-contact">
-            <div className="csr-contact-item">
+            <a href="mailto:being.sevak@gmail.com" className="csr-contact-item" style={{color:'inherit',textDecoration:'none'}}>
               <i className="fas fa-envelope"></i>
               being.sevak@gmail.com
-            </div>
-            <div className="csr-contact-item">
+            </a>
+            <a href="tel:+918879035035" className="csr-contact-item" style={{color:'inherit',textDecoration:'none'}}>
               <i className="fas fa-phone"></i>
               +91 8879035035
-            </div>
+            </a>
           </div>
           <p className="csr-tagline">"Together, We Can Create Lasting Social Impact."</p>
         </div>

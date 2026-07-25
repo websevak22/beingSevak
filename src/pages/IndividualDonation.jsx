@@ -270,7 +270,7 @@ export default function IndividualDonation() {
           .quick-donate-bar { padding: 10px 12px; }
           .qd-inner { flex-wrap: wrap; gap: 8px; justify-content: center; }
           .amount-input-wrap { flex: 1 1 100%; }
-          .amount-input { width: 100%; }
+          .amount-input { width: calc(100% - 50px); }
           .preset-amt { display: none; }
           .payment-icons { display: none; }
           .quick-donate-pulse-wrap { margin-left: 0; width: 100%; }

@@ -182,7 +182,7 @@ const MissionAtmanirbhar = () => {
           .mission-atmanirbhar .hero-content { gap: 30px; }
           .mission-atmanirbhar .hero-left h1 { font-size: 26px; line-height: 1.3; }
           .mission-atmanirbhar .hero-left p { font-size: 15px; }
-          .mission-atmanirbhar .tag { font-size: 16px; }
+          .mission-atmanirbhar .tag { font-size: 16px; font-weight: 900; }
           .mission-atmanirbhar .hero-buttons { flex-direction: column; align-items: center; }
           .mission-atmanirbhar .primary-btn { padding: 12px 24px; font-size: 15px; }
           .mission-atmanirbhar .hero-right img { max-width: 100%; height: 280px; border-radius: 20px; transform: none; animation: none; }
