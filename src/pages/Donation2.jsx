@@ -291,7 +291,6 @@ export default function Donation2() {
           .section-header span { font-size: 18px; }
           .section-header h2 { font-size: 24px; }
           .section-header p { font-size: 14px; }
-          .projects-section { padding: 30px 5% 40px; }
           .tabs-wrapper { gap: 4px; }
           .tab-link { font-size: 10px; padding: 6px 10px; }
           .project-card { padding: 16px 14px; border-radius: 16px; }
@@ -314,7 +313,8 @@ export default function Donation2() {
           .project-card { padding: 14px 12px; border-radius: 14px; }
           .project-card h3 { font-size: 15px; }
           .project-card p { font-size: 12px; }
-          .donation-frame { min-height: 420px; border-radius: 14px; }
+          .donation-frame { min-height: 800px; border-radius: 14px; }
+          .projects-section { padding: 30px 5% 40px; }
           .tax-box p { font-size: 11px; }
         }
       `}</style>

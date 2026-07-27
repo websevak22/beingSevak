@@ -89,6 +89,10 @@ body{
   animation:zoomfade 1.5s ease;
 }
 
+.sevak-nivash .anndaan-content h1{
+  font-size:40px;
+}
+
 .anndaan-content p{
   color:#fff;
   font-size:26px;
@@ -257,7 +261,7 @@ body{
 .kitcare-wrapper,
 .snackdrive-container,
 .nutritioncare-wrap{
-  padding:110px 8%;
+  padding:40px 8%;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:60px;

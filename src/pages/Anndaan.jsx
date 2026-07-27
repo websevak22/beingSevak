@@ -23,7 +23,7 @@ export default function Anndaan() {
         .anndaan-page .sevak-food-main-wrap { width: 100%; background: #fff; }
         .anndaan-page .annaseva-hero-zone {
           position: relative; min-height: 100vh; display: flex; justify-content: center; align-items: center;
-          text-align: center; padding: 80px 8%; overflow: hidden;
+          text-align: center; padding: 80px 8% 50px; overflow: hidden;
           background: linear-gradient(to bottom right, #ffffff, #f3fbff);
         }
         .anndaan-page .annaseva-hero-content { max-width: 900px; position: relative; z-index: 5; }
@@ -52,7 +52,7 @@ export default function Anndaan() {
         .anndaan-page .nutritioncare-wrap {
           padding: 110px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
         }
-        .anndaan-page .kitcare-wrapper { padding-top: 80px; }
+        .anndaan-page .kitcare-wrapper { padding-top: 40px; padding-bottom: 40px; }
         .anndaan-page .rotiseva-zone { padding: 30px 8%; }
         .anndaan-page .mealwave-section { padding: 60px 8%; }
         .anndaan-page .snackdrive-container { padding: 40px 8%; }
@@ -111,21 +111,21 @@ export default function Anndaan() {
         .anndaan-page .rotiseva-content ul li::before { content: '✓'; position: absolute; left: 0; color: #00a3da; font-size: 20px; }
 
         .anndaan-page .kitcare-btn {
-          display: inline-block; margin-top: 20px; background: #00a3da; color: #fff; text-decoration: none;
-          padding: 16px 35px; border-radius: 50px; font-weight: 700;
+          display: flex; justify-content: center; align-items: center; margin-top: 20px; margin-left: auto; margin-right: auto; width: fit-content; background: #00a3da; color: #fff; text-decoration: none;
+          padding: 16px 10px; border-radius: 8px; font-weight: 700; text-align: center;
           box-shadow: 0 15px 35px #00a3da45; transition: 0.4s;
         }
         .anndaan-page .kitcare-btn:hover { transform: translateY(-7px); }
 
-        .anndaan-page .sweetmeal-section { padding: 50px 8% 40px; background: linear-gradient(to bottom, #f9fdff, #ffffff); }
+        .anndaan-page .sweetmeal-section { padding: 20px 8% 40px; background: linear-gradient(to bottom, #f9fdff, #ffffff); }
         .anndaan-page .sweetmeal-top { text-align: center; max-width: 900px; margin: auto; }
 
         .anndaan-page .nutritioncare-card-row { display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
-        .anndaan-page .nutrition-mini-card { background: #fff; border-radius: 25px; padding: 30px; min-width: 220px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+        .anndaan-page .nutrition-mini-card { background: #fff; border-radius: 25px; padding: 30px 50px 30px 30px; min-width: 300px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
         .anndaan-page .nutrition-mini-card h3 { color: #00a3da; font-size: 32px; margin-bottom: 10px; }
 
-        .anndaan-page .testimonial-section { padding: 40px 5% 30px; }
-        .anndaan-page .section-header { text-align: center; margin-bottom: 60px; }
+        .anndaan-page .testimonial-section { padding: 25px 5% 25px; }
+        .anndaan-page .section-header { text-align: center; margin-bottom: 0; }
         .anndaan-page .section-header span { color: #00a3da; font-weight: 700; letter-spacing: 2px; }
         .anndaan-page .section-header h2 { font-size: 42px; margin: 18px 0; }
         .anndaan-page .testimonial-grid {
@@ -183,7 +183,7 @@ export default function Anndaan() {
           .anndaan-page .mealwave-highlight-box { flex-wrap: wrap; }
           .anndaan-page .mealwave-highlight-box div { width: 100%; min-height: auto; padding: 20px; }
           .anndaan-page .snackdrive-images { grid-template-columns: 1fr; }
-          .anndaan-page .kitcare-wrapper { padding: 60px 8%; }
+          .anndaan-page .kitcare-wrapper { padding: 40px 8%; }
         }
       `}</style>
 
