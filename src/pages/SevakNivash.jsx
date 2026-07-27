@@ -128,14 +128,14 @@ export default function SevakNivash() {
           position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
           text-align: center; width: 100%; padding: 20px; z-index: 5;
         }
-        .sevak-nivash .anndaan-content h1 { font-size: 120px; color: #fff; font-weight: 900; letter-spacing: 5px; text-shadow: 0 15px 35px rgba(0,0,0,0.4); animation: snZoomfade 1.5s ease; }
+        .sevak-nivash .anndaan-content h1 { font-size: 40px; color: #fff; font-weight: 900; letter-spacing: 5px; text-shadow: 0 15px 35px rgba(0,0,0,0.4); animation: snZoomfade 1.5s ease; }
         .sevak-nivash .anndaan-content p { color: #fff; font-size: 26px; margin-top: 15px; letter-spacing: 2px; text-shadow: 0 10px 25px rgba(0,0,0,0.4); }
         @keyframes snZoomfade { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
 
         .sevak-nivash .sevak-food-main-wrap { width: 100%; background: #fff; }
         .sevak-nivash .annaseva-hero-zone {
           position: relative; min-height: 100vh; display: flex; justify-content: center; align-items: center;
-          text-align: center; padding: 120px 8%; overflow: hidden;
+          text-align: center; padding: 80px 8%; overflow: hidden;
           background: linear-gradient(to bottom right, #ffffff, #f3fbff);
         }
         .sevak-nivash .annaseva-hero-content { max-width: 900px; position: relative; z-index: 5; }
@@ -168,7 +168,7 @@ export default function SevakNivash() {
         .sevak-nivash .sevak-box h3 { margin-bottom: 30px; }
         .sevak-nivash .sevak-box p { font-size: 20px; line-height: 1.5; }
 
-        .sevak-nivash .about-sevak { padding: 40px 4%; background: #fff; }
+        .sevak-nivash .about-sevak { padding: 20px 4%; background: #fff; }
         .sevak-nivash .section-heading { text-align: center; max-width: 1000px; margin: auto; }
         .sevak-nivash .section-heading h2 { color: #00a3da; font-size: 42px; margin-bottom: 15px; font-weight: 700; }
         .sevak-nivash .section-heading p { color: #555; line-height: 1.8; font-size: 16px; }
@@ -212,25 +212,39 @@ export default function SevakNivash() {
         @media (max-width: 991px) {
           .sevak-nivash .anndaan-hero-banner { height: 350px; }
           .sevak-nivash .anndaan-hero-banner img { height: 350px; }
-          .sevak-nivash .anndaan-content h1 { font-size: 60px; }
+          .sevak-nivash .anndaan-content h1 { font-size: 40px; }
           .sevak-nivash .anndaan-content p { font-size: 18px; }
           .sevak-nivash .annaseva-hero-content h1 { font-size: 48px; }
-          .sevak-nivash .facility-wrapper { flex-direction: column; }
-          .sevak-nivash .donation-card { width: 100%; position: relative; top: 0; }
+          .sevak-nivash .facility-wrapper { flex-direction: column; overflow: visible; }
+          .sevak-nivash .donation-card { width: 100%; position: relative; top: 0; overflow: visible; }
           .sevak-nivash .facility-content h3, .sevak-nivash .facility-content h2 { font-size: 30px; }
           .sevak-nivash .facility-section .facility-wrapper { gap: 25px; }
-          .sevak-nivash .facility-section .donation-card { width: 320px; }
+          .sevak-nivash .facility-section .donation-card { width: 100%; overflow: visible; }
         }
         @media (max-width: 768px) {
-          .sevak-nivash .facility-wrapper { align-items: flex-start; }
+          .sevak-nivash .facility-wrapper { align-items: stretch; overflow: visible; }
           .sevak-nivash .facility-content { width: 100%; padding-right: 0; }
           .sevak-nivash .facility-content h3, .sevak-nivash .facility-content h2 { font-size: 30px; }
           .sevak-nivash .facility-content p { font-size: 16px; }
           .sevak-nivash .facility-section .donation-card { width: 100%; }
+          .sevak-nivash .about-sevak .facility-wrapper { overflow: visible; }
+          .sevak-nivash .about-sevak { overflow: visible; }
+          .sevak-nivash .facility-section { overflow: visible; }
         }
         @media (max-width: 600px) {
           .sevak-nivash .annaseva-hero-content h1 { font-size: 38px; }
           .sevak-nivash .sevak-box { width: 100%; }
+          .sevak-nivash .donation-card { position: relative; top: 0; overflow: visible; display: block; visibility: visible; opacity: 1; width: 100%; max-width: 100%; height: auto; transform: none; }
+          .sevak-nivash .donation-card .facility-image { overflow: visible; transform: none; height: auto; }
+          .sevak-nivash .donation-card .facility-image img { height: auto; }
+          .sevak-nivash .donation-card h3 { display: block; visibility: visible; opacity: 1; overflow: visible; }
+          .sevak-nivash .donation-card p { display: block; visibility: visible; opacity: 1; overflow: visible; }
+          .sevak-nivash .donation-card .amount { display: block; visibility: visible; opacity: 1; overflow: visible; }
+          .sevak-nivash .donation-card .donate-btn { display: block; visibility: visible; opacity: 1; overflow: visible; }
+          .sevak-nivash .facility-section .donation-card { width: 100%; border: 1px solid #eee; }
+          .sevak-nivash .facility-section .facility-wrapper { flex-direction: column; gap: 25px; overflow: visible; }
+          .sevak-nivash .about-sevak .facility-wrapper { flex-direction: column; gap: 25px; overflow: visible; }
+          .sevak-nivash { overflow-x: visible; overflow-y: visible; }
         }
       `}</style>
 
