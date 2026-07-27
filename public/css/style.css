@@ -4840,18 +4840,20 @@ body{
   }
   .slider-arrow { width: 28px; height: 28px; font-size: 11px; }
   .dot { width: 8px; height: 8px; }
-  .quick-donate-bar { padding: 8px 0; }
+  .quick-donate-bar { padding: 6px 0; }
   .qd-inner {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 8px;
-    padding: 0 10px;
+    gap: 6px;
+    padding: 0 8px;
   }
-  .amount-input-wrap { flex: 1 1 100%; min-width: unset; }
-  .amount-input { width: 100%; padding: 10px 14px; font-size: 15px; }
+  .currency-select { padding: 6px 4px; font-size: 12px; gap: 2px; flex-shrink: 0; }
+  .amount-input-wrap { flex: 0 0 80px; min-width: 0; }
+  .amount-input { width: 100%; padding: 6px 6px; font-size: 13px; }
   .preset-amt { display: none; }
   .payment-icons { display: none; }
-  .quick-donate-btn { width: 100%; text-align: center; }
+  .quick-donate-pulse-wrap { flex-shrink: 0; }
+  .quick-donate-btn { width: auto; padding: 6px 16px; font-size: 11px; text-align: center; }
   .causes-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-num { font-size: 32px; }
