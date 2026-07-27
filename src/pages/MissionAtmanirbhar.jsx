@@ -71,7 +71,7 @@ const MissionAtmanirbhar = () => {
           100% { transform: perspective(1000px) rotateY(-10deg) translateY(0); }
         }
 
-        .mission-atmanirbhar .about-section { width: 100%; padding: 90px 7%; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1; overflow: hidden; isolation: isolate; }
+        .mission-atmanirbhar .about-section { width: 100%; padding: 0px 7%; margin-top: 0px; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1; overflow: hidden; isolation: isolate; }
         .mission-atmanirbhar .about-image { flex: 1; overflow: hidden; isolation: isolate; }
         .mission-atmanirbhar .about-image img { height: 520px; border-radius: 30px; object-fit: cover; }
         .mission-atmanirbhar .about-content { flex: 1; }
@@ -93,9 +93,9 @@ const MissionAtmanirbhar = () => {
         .mission-atmanirbhar .about-box:hover h3, .mission-atmanirbhar .about-box:hover p { color: #fff; }
 
         .mission-atmanirbhar .impact-section { width: 100%; padding: 80px 7%; background: #eef4f7; }
-        .mission-atmanirbhar .impact-wrapper { display: flex; justify-content: center; gap: 25px; }
+        .mission-atmanirbhar .impact-wrapper { display: flex; justify-content: center; align-items: center; gap: 25px; padding: 40px 60px; }
         .mission-atmanirbhar .impact-card {
-          background: #eef9ff; padding: 20px; border-radius: 20px; transition: 0.4s ease; cursor: pointer;
+          background: #eef9ff; padding: 20px 50px; border-radius: 20px; transition: 0.4s ease; cursor: pointer; width: 250px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .mission-atmanirbhar .impact-card:hover { background: #00a3da; color: #fff; transform: translateY(-6px); }
         .mission-atmanirbhar .impact-card h3, .mission-atmanirbhar .impact-card p { transition: 0.3s ease; }
@@ -161,7 +161,7 @@ const MissionAtmanirbhar = () => {
 
         @media (max-width: 991px) {
           .mission-atmanirbhar .hero-content, .mission-atmanirbhar .about-section { flex-direction: column; text-align: center; }
-          .mission-atmanirbhar .about-section { margin-top: 50px; clip-path: inset(0); }
+          .mission-atmanirbhar .about-section { margin-top: 0px; clip-path: inset(0); }
           .mission-atmanirbhar #donate { margin-bottom: 30px; }
           .mission-atmanirbhar .hero-left { max-width: 100%; }
           .mission-atmanirbhar .hero-right img { max-width: 400px; height: 400px; }
@@ -192,7 +192,7 @@ const MissionAtmanirbhar = () => {
           .mission-atmanirbhar .about-box { padding: 16px; border-radius: 16px; }
           .mission-atmanirbhar .impact-section { padding: 50px 5%; }
           .mission-atmanirbhar .impact-wrapper { gap: 15px; }
-          .mission-atmanirbhar .impact-card { padding: 15px; text-align: center; }
+          .mission-atmanirbhar .impact-card { padding: 40px 60px; text-align: center; }
           .mission-atmanirbhar .gallery-section { padding: 50px 5%; }
           .mission-atmanirbhar .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; }
           .mission-atmanirbhar .gallery-item, .mission-atmanirbhar .gallery-item.large, .mission-atmanirbhar .gallery-item.wide { grid-column: span 1; grid-row: span 1; height: 280px; }
@@ -200,11 +200,11 @@ const MissionAtmanirbhar = () => {
           .mission-atmanirbhar .sevak-title { font-size: 28px; }
           .mission-atmanirbhar .sevak-desc { font-size: 14px; }
           .mission-atmanirbhar .sevak-btn { padding: 12px 28px; font-size: 14px; white-space: normal; }
-          .mission-atmanirbhar .about-section { margin-top: 50px; }
+          .mission-atmanirbhar .about-section { margin-top: 0px; }
           .mission-atmanirbhar #donate { margin-bottom: 30px; }
         }
         @media (max-width: 360px) {
-          .mission-atmanirbhar .about-section { margin-top: 60px; }
+          .mission-atmanirbhar .about-section { margin-top: 0px; }
           .mission-atmanirbhar #donate { margin-bottom: 40px; }
         }
       `}</style>
