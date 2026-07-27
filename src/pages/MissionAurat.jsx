@@ -67,7 +67,7 @@ const MissionAurat = () => {
         @keyframes auFloat { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
 
         .mission-aurat .about-section {
-          width: 100%; max-width: 1100px; margin: 10px auto; padding: 50px;
+          width: 100%; max-width: 1100px; margin: 20px auto; padding: 50px;
           background: #ffffff; border-radius: 35px; display: flex; align-items: center;
           justify-content: center; gap: 50px; box-shadow: 0 10px 35px rgba(0,0,0,0.05);
           position: relative; z-index: 1; overflow: hidden; isolation: isolate;
@@ -219,7 +219,7 @@ const MissionAurat = () => {
           .mission-aurat .about-content p { font-size: 14px; }
           .mission-aurat .about-grid { grid-template-columns: 1fr; }
           .mission-aurat .about-box { padding: 18px; border-radius: 18px; }
-          .mission-aurat .impact-section { padding: 60px 15px; }
+          .mission-aurat .impact-section { padding: 40px 15px; }
           .mission-aurat .impact-content h2 { font-size: 30px; }
           .mission-aurat .impact-content p { font-size: 14px; }
           .mission-aurat .impact-stats { flex-direction: row; align-items: center; }
@@ -236,7 +236,7 @@ const MissionAurat = () => {
           .mission-aurat #donate { margin-bottom: 30px; }
         }
         @media (max-width: 360px) {
-          .mission-aurat .about-section { margin-top: 60px; }
+          .mission-aurat .about-section { margin-top: 20px; }
           .mission-aurat #donate { margin-bottom: 40px; }
         }
       `}</style>

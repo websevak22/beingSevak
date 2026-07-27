@@ -93,7 +93,7 @@ const MissionBezubaan = () => {
         .mission-bezubaan .card2 { bottom: 35px; right: -35px; }
         @keyframes bzFloat { 0% { transform: translateY(0px); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0px); } }
 
-        .mission-bezubaan .about-section { width: 100%; padding: 0px 7%; display: flex; align-items: center; justify-content: space-between; gap: 70px; position: relative; z-index: 1; overflow: hidden; isolation: isolate; }
+        .mission-bezubaan .about-section { width: 100%; padding: 0px 7% 60px; display: flex; align-items: center; justify-content: space-between; gap: 70px; position: relative; z-index: 1; overflow: hidden; isolation: isolate; }
         .mission-bezubaan .about-image, .mission-bezubaan .about-content { flex: 1; }
         .mission-bezubaan .about-image { position: relative; overflow: hidden; isolation: isolate; }
         .mission-bezubaan .about-image img {
