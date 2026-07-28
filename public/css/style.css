@@ -25,6 +25,7 @@ ul { list-style: none; }
 img { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 a[class*="btn"]:not(.zakat-circle-btn), button:not(.zakat-circle-btn) { border-radius: 8px !important; }
+.donation-frame, iframe[src*="donation"] { overflow: hidden !important; }
 input, select { font-family: inherit; outline: none; border: none; }
 
 
@@ -1326,11 +1327,13 @@ input, select { font-family: inherit; outline: none; border: none; }
 
 /* GRID */
 .projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  display:flex;
+  flex-wrap:nowrap;
   gap:20px;
   padding:50px 30px;
 }
+.marquee .projects-grid{display:flex;flex-wrap:nowrap;}
+.marquee .project-card{flex-shrink:0;min-width:180px;}
 
 /* CARD */
 .project-card{
@@ -4948,4 +4951,5 @@ body{
   .month-modal-download { right: 44px; }
   .month-modal-nav { width: 30px; height: 30px; font-size: 12px; }
   .month-modal-caption { font-size: 12px; padding: 10px 14px; }
+  .floating-card { border-radius: 9px !important; }
 }

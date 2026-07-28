@@ -61,7 +61,7 @@ const MissionVidhya = () => {
           position: relative; max-width: 500px; min-height: 500px;
         }
         .mission-vidhya .main-image-card {
-          width: 100%; max-width: 480px; border-radius: 30px; overflow: hidden;
+          width: 100%; max-width: 480px; border-radius: 30px; overflow: visible;
           position: relative; z-index: 2;
           transform: perspective(1000px) rotate(-3deg);
           box-shadow: 0 20px 50px rgba(0,0,0,0.15), 0 10px 25px rgba(0,163,218,0.12);
@@ -85,8 +85,8 @@ const MissionVidhya = () => {
         .mission-vidhya .card2 { bottom: 70px; right: 20px; }
         @keyframes viFloat { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
 
-        .mission-vidhya .about-section { width: 100%; display: flex; align-items: center; justify-content: center; gap: 45px; padding: 80px 5%; background: #fff; position: relative; z-index: 1; overflow: hidden; isolation: isolate; }
-        .mission-vidhya .about-image { position: relative; overflow: hidden; isolation: isolate; }
+        .mission-vidhya .about-section { width: 100%; display: flex; align-items: center; justify-content: center; gap: 45px; padding: 40px 5% 10px; background: #fff; position: relative; z-index: 1; overflow: visible; isolation: isolate; }
+        .mission-vidhya .about-image { position: relative; overflow: visible; isolation: isolate; }
         .mission-vidhya .about-image img { border-radius: 35px; height: 450px; object-fit: cover; box-shadow: 0 25px 50px rgba(0,0,0,0.12); transition: 0.5s ease; }
         .mission-vidhya .about-image img:hover { transform: scale(1.03); box-shadow: 0 40px 90px rgba(0,0,0,0.2); }
         .mission-vidhya .about-image::before {
@@ -115,11 +115,11 @@ const MissionVidhya = () => {
         .mission-vidhya .section-heading { text-align: center; margin-bottom: 45px; }
         .mission-vidhya .section-heading span { color: #00a3da; font-weight: 700; font-size: x-large; }
         .mission-vidhya .section-heading h2 { font-size: 40px; margin-top: 10px; }
-        .mission-vidhya .impact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+        .mission-vidhya .impact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; padding: 0 5% 30px; justify-items: center; }
         .mission-vidhya .impact-card {
           background: #fff; padding: 22px 16px; text-align: center; border-radius: 20px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.06); transition: 0.3s ease;
-          position: relative; overflow: hidden; cursor: pointer; height: 150px;
+          position: relative; overflow: hidden; cursor: pointer; height: 150px; width: 250px;
           display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .mission-vidhya .impact-card::before {
@@ -180,8 +180,8 @@ const MissionVidhya = () => {
 
         @media (max-width: 991px) {
           .mission-vidhya .hero-section, .mission-vidhya .about-section { flex-direction: column; text-align: center; }
-          .mission-vidhya .about-section { margin-top: 50px; clip-path: inset(0); }
-          .mission-vidhya #donate { margin-bottom: 30px; }
+          .mission-vidhya .about-section { margin-top: 0; clip-path: inset(0); }
+          .mission-vidhya #donate { margin-bottom: 0; }
           .mission-vidhya .hero-left, .mission-vidhya .about-content { max-width: 100%; }
           .mission-vidhya .hero-buttons { justify-content: center; }
           .mission-vidhya .hero-left h1 { font-size: 46px; }
@@ -203,7 +203,7 @@ const MissionVidhya = () => {
           .mission-vidhya .tag { font-size: 22px; }
           .mission-vidhya .hero-buttons { flex-direction: column; align-items: center; }
           .mission-vidhya .primary-btn { padding: 12px 22px; font-size: 15px; }
-          .mission-vidhya .impact-grid { grid-template-columns: 1fr; }
+          .mission-vidhya .impact-grid { display: flex; flex-direction: row; align-items: center; justify-content: center; flex-wrap: wrap; }
           .mission-vidhya .impact-card { height: 120px; padding: 16px 12px; border-radius: 16px; }
           .mission-vidhya .hero-right { min-height: auto; padding: 0; width: 100%; max-width: 360px; margin: 0 auto; }
           .mission-vidhya .main-image-card { max-width: 100%; transform: none; animation: none; border-radius: 20px; }
@@ -219,12 +219,12 @@ const MissionVidhya = () => {
           .mission-vidhya .sevak-title { font-size: 24px; }
           .mission-vidhya .sevak-desc { font-size: 14px; }
           .mission-vidhya .sevak-btn { padding: 12px 28px; font-size: 14px; white-space: normal; }
-          .mission-vidhya .about-section { margin-top: 50px; }
-          .mission-vidhya #donate { margin-bottom: 30px; }
+          .mission-vidhya .about-section { margin-top: 0; }
+          .mission-vidhya #donate { margin-bottom: 0; }
         }
         @media (max-width: 360px) {
-          .mission-vidhya .about-section { margin-top: 60px; }
-          .mission-vidhya #donate { margin-bottom: 40px; }
+          .mission-vidhya .about-section { margin-top: 0; }
+          .mission-vidhya #donate { margin-bottom: 0; }
         }
       `}</style>
 
@@ -257,7 +257,7 @@ const MissionVidhya = () => {
           </div>
         </section>
 
-        <div id="donate" style={{ width: '100%', background: '#f4f7fb', padding: '0', overflow: 'hidden', position: 'relative', zIndex: 10, isolation: 'isolate' }}>
+        <div id="donate" style={{ width: '100%', background: '#fff', padding: '0', overflow: 'hidden', position: 'relative', zIndex: 10, isolation: 'isolate' }}>
           <iframe
             ref={iframeRef}
             src="/donations/donation-inline-vidhya.html"
@@ -266,7 +266,7 @@ const MissionVidhya = () => {
           />
         </div>
 
-        <section className="about-section" id="about">
+        <section className="about-section" id="about" style={{ marginTop: '1px' }}>
           <div className="about-image">
             <img src="/images/v2.jpg" alt="Education" />
           </div>

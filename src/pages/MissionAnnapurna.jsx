@@ -170,7 +170,7 @@ const MissionAnnapurna = () => {
 
         @media (max-width: 991px) {
           .mission-annapurna .hero, .mission-annapurna .about-section { grid-template-columns: 1fr; min-height: auto; padding: 60px 5% 40px; gap: 40px; text-align: center; }
-          .mission-annapurna .about-section { margin-top: 50px; }
+          .mission-annapurna .about-section { margin-top: 0; }
           .mission-annapurna .hero-content { order: 1; }
           .mission-annapurna .hero-image { order: 2; margin: 0 auto; }
           .mission-annapurna .hero h1 { font-size: 42px; }
@@ -210,7 +210,7 @@ const MissionAnnapurna = () => {
           .mission-annapurna .floating-card p { font-size: 11px; margin: 0; }
           .mission-annapurna .donate-btn-hero { padding: 10px 20px; font-size: 14px; }
           .mission-annapurna .about-image img { height: 280px; border-radius: 24px; }
-          .mission-annapurna .about-section { margin-top: 50px; }
+          .mission-annapurna .about-section { margin-top: 0; }
           .mission-annapurna .about-image::before { display: none; }
           .mission-annapurna .about-content h2 { font-size: 26px; }
           .mission-annapurna .small-title { font-size: 20px; }
