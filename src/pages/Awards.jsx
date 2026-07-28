@@ -32,11 +32,11 @@ const Awards = () => {
         .letter-grid img{width:100%;height:340px;object-fit:contain;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.1);transition:0.3s;background:#fff}
         .letter-grid img:hover{transform:scale(1.03)}
         .tax-box{width:100%;height:70px;display:flex;justify-content:center;align-items:center;text-align:center;background:linear-gradient(to right,#009BD4 0%,#0285C3 25%,#046FB1 50%,#074D97 75%,#083D8B 100%);color:#fff;border-radius:0;margin:20px 0;padding:10px}
-        .tax-box h1{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;letter-spacing:2px;color:#fff;margin:0}
+        .tax-box h1{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;letter-spacing:2px;color:#fff;margin:0;padding:10px}
         .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;position:relative;overflow:hidden;padding:10px 8%}
         .hero-content{position:relative;z-index:2}
         .hero-content .tag{background:transparent;color:#00a3da;padding:0;border-radius:0;display:inline-block;margin-bottom:25px;font-weight:800;font-size:35px;letter-spacing:1px}
-        .hero h1{font-size:62px;line-height:1.1;font-weight:800;margin-bottom:25px;color:var(--navy)}
+        .hero h1{font-size:20px;line-height:1.1;font-weight:800;margin-bottom:25px;padding:10px;color:var(--navy)}
         .hero h1 span{color:#00a3da}
         .hero p{font-size:18px;line-height:1.9;color:#66788a;margin-bottom:35px}
         .hero-buttons{display:flex;gap:18px;flex-wrap:wrap}

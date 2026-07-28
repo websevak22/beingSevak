@@ -174,6 +174,7 @@ export default function MissionEco() {
           .mission-eco .hero-right img { height: auto; aspect-ratio: 4/3; max-height: 300px; border-radius: 24px; transform: none; animation: none; }
           .mission-eco .green-earth-wrap { padding: 50px 5%; }
           .mission-eco .green-earth-content h2 { font-size: 34px; }
+          .mission-eco .green-earth-btn { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
           .mission-eco .sevak-title { font-size: 28px; }
         }
       `}</style>
