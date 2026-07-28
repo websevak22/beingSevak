@@ -269,8 +269,9 @@ export default function IndividualDonation() {
           .individual-grid { grid-template-columns: 1fr; }
           .quick-donate-bar { padding: 10px 12px; }
           .qd-inner { flex-wrap: nowrap; gap: 8px; justify-content: flex-start; }
-          .amount-input-wrap { flex: 0 0 60px; }
-          .amount-input { width: 100%; }
+          .currency-select { padding: 4px 8px; font-size: 11px; gap: 3px; }
+          .amount-input-wrap { flex: 0 0 85px; }
+          .amount-input { width: 100%; padding: 7px 10px; font-size: 13px; }
           .preset-amt { display: none; }
           .payment-icons { display: none; }
           .quick-donate-pulse-wrap { margin-left: 0; }
