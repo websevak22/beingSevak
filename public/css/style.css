@@ -1716,6 +1716,12 @@ body{
   }
 }
 
+@media(max-width:768px){
+  .causes-track{
+    animation: scrollActivities 5s linear infinite;
+  }
+}
+
 @media(max-width:700px){
   .causes-grid{
     grid-template-columns: 1fr;
@@ -2233,7 +2239,7 @@ body{
 
     .slider-track {
         gap: 20px;
-        animation: scrollActivities 20s linear infinite;
+    animation: scrollActivities 5s linear infinite;
     }
 }
 
@@ -4848,15 +4854,15 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     gap: 6px;
-    padding: 0 8px;
+    padding: 0 8px 0 0;
   }
   .currency-select { padding: 6px 4px; font-size: 12px; gap: 2px; flex-shrink: 0; }
-  .amount-input-wrap { flex: 0 0 80px; min-width: 0; }
+  .amount-input-wrap { flex: 0 0 50px; min-width: 0; }
   .amount-input { width: 100%; padding: 6px 6px; font-size: 13px; }
   .preset-amt { display: none; }
   .payment-icons { display: none; }
   .quick-donate-pulse-wrap { flex-shrink: 0; }
-  .quick-donate-btn { width: auto; padding: 6px 16px; font-size: 11px; text-align: center; }
+  .quick-donate-btn { width: auto; padding: 6px 36px; font-size: 11px; text-align: center; }
   .causes-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-num { font-size: 32px; }
@@ -4919,7 +4925,6 @@ body{
   .single-image-box { max-width: 100%; }
   .about-img { border-radius: 16px; transform: none; }
   .causes-track .cause-card { width: 240px; }
-  .causes-track { animation: scrollActivities 30s linear infinite; }
   .metro-section { padding: 40px 4%; }
   .metro-box { gap: 25px; }
   .metro-hero-img img { height: 200px; }
