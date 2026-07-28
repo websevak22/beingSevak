@@ -2069,7 +2069,7 @@ body{
     display:flex;
     gap:35px;
     width: max-content;
-  animation: scrollActivities 5s linear infinite;
+  animation: scrollActivities 30s linear infinite;
 }
 
 @keyframes scrollActivities {
