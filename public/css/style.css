@@ -4865,7 +4865,7 @@ body{
   .preset-amt { display: none; }
   .payment-icons { display: none; }
   .quick-donate-pulse-wrap { flex-shrink: 0; }
-  .quick-donate-btn { width: auto; padding: 6px 36px; font-size: 11px; text-align: center; }
+  .quick-donate-btn { width: auto; padding: 10px 28px; font-size: 13px; text-align: center; }
   .causes-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-num { font-size: 32px; }
