@@ -36,6 +36,36 @@ export default function Home() {
   // Featured Projects
   const [currentFeatured, setCurrentFeatured] = useState(0);
   const totalFeaturedSlides = 3;
+  const featuredSliderRef = useRef(null);
+
+  useEffect(() => {
+    const box = featuredSliderRef.current;
+    if (!box) return;
+    const isMobile = () => window.innerWidth <= 768;
+    let ticking = false;
+    const onScroll = () => {
+      if (!isMobile() || ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollLeft = box.scrollLeft;
+        const slideWidth = box.offsetWidth;
+        if (slideWidth > 0) {
+          const idx = Math.round(scrollLeft / slideWidth);
+          setCurrentFeatured(Math.max(0, Math.min(idx, totalFeaturedSlides - 1)));
+        }
+        ticking = false;
+      });
+    };
+    box.addEventListener('scroll', onScroll, { passive: true });
+    return () => box.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToFeaturedSlide = (idx) => {
+    const box = featuredSliderRef.current;
+    if (!box || window.innerWidth > 768) return;
+    const slideWidth = box.offsetWidth;
+    box.scrollTo({ left: idx * slideWidth, behavior: 'smooth' });
+  };
 
   // Impact Stats
   const impactRef = useRef(null);
@@ -1364,7 +1394,7 @@ export default function Home() {
           <h2>Featured <span className="accent">Projects</span></h2>
           <p>Make a direct impact with these urgent campaigns</p>
         </div>
-        <div className="featured-slider-box">
+        <div className="featured-slider-box" ref={featuredSliderRef}>
           <div className={`featured-slide ${currentFeatured === 0 ? 'active' : ''}`}>
             <div className="featured-card">
               <div className="feat-img" style={{ backgroundImage: "url('images/Matrimonial.jpeg')" }}></div>
@@ -1431,7 +1461,7 @@ export default function Home() {
             <span
               key={i}
               className={`featured-dot ${currentFeatured === i ? 'active' : ''}`}
-              onClick={() => setCurrentFeatured(i)}
+              onClick={() => { setCurrentFeatured(i); scrollToFeaturedSlide(i); }}
             ></span>
           ))}
         </div>

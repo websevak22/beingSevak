@@ -587,6 +587,10 @@ body{
     grid-template-columns:1fr;
   }
 
+  .nutrition-mini-card{
+    text-align:center;
+  }
+
 }
 
 /* =========================
