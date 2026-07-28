@@ -142,7 +142,7 @@ const CSR = () => {
         <div className="csr-highlight">
           <h2>Partner With Us</h2>
           <div className="csr-contact">
-            <a href="mailto:being.sevak@gmail.com" className="csr-contact-item" style={{color:'inherit',textDecoration:'none'}}>
+            <a href="mailto:being.sevak@gmail.com" className="csr-contact-item" style={{color:'inherit',textDecoration:'none'}} onClick={(e) => { e.preventDefault(); window.location.href = 'mailto:being.sevak@gmail.com'; }}>
               <i className="fas fa-envelope"></i>
               being.sevak@gmail.com
             </a>
