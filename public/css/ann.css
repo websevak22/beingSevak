@@ -587,6 +587,10 @@ body{
     grid-template-columns:1fr;
   }
 
+  .nutritioncare-card-row{
+    justify-content:center;
+  }
+
   .nutrition-mini-card{
     text-align:center;
   }
