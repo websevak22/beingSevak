@@ -2239,7 +2239,7 @@ body{
 
     .slider-track {
         gap: 20px;
-    animation: scrollActivities 5s linear infinite;
+    animation: scrollActivities 30s linear infinite;
     }
 }
 
