@@ -1692,7 +1692,7 @@ body{
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: scrollActivities 30s linear infinite;
+  animation: scrollActivities 5s linear infinite;
   padding: 20px 0;
 }
 
@@ -2069,7 +2069,7 @@ body{
     display:flex;
     gap:35px;
     width: max-content;
-    animation: scrollActivities 30s linear infinite;
+  animation: scrollActivities 5s linear infinite;
 }
 
 @keyframes scrollActivities {
