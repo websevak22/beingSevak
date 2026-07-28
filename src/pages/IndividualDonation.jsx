@@ -268,13 +268,13 @@ export default function IndividualDonation() {
           .individual-content { padding: 40px 5%; }
           .individual-grid { grid-template-columns: 1fr; }
           .quick-donate-bar { padding: 10px 12px; }
-          .qd-inner { flex-wrap: wrap; gap: 8px; justify-content: center; }
-          .amount-input-wrap { flex: 1 1 100%; }
-          .amount-input { width: calc(100% - 50px); }
+          .qd-inner { flex-wrap: nowrap; gap: 8px; justify-content: flex-start; }
+          .amount-input-wrap { flex: 0 0 60px; }
+          .amount-input { width: 100%; }
           .preset-amt { display: none; }
           .payment-icons { display: none; }
-          .quick-donate-pulse-wrap { margin-left: 0; width: 100%; }
-          .quick-donate-btn { width: 100%; text-align: center; }
+          .quick-donate-pulse-wrap { margin-left: 0; }
+          .quick-donate-btn { width: auto; text-align: center; }
         }
         .basket-overlay {
           display: block !important;
