@@ -54,9 +54,57 @@ export default function IndividualDonation() {
     }
     if (!name) { alert('Please enter your name.'); return; }
     if (!email) { alert('Please enter your email.'); return; }
-    if (!phone) { alert('Please enter your phone number.'); return; }
+    if (!phone || phone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
     const items = Object.entries(cartQty).filter(([, q]) => q > 0).map(([k, q]) => k + 'x' + q).join(', ');
-    alert(`Donation: \u20B9${total.toLocaleString('en-IN')} INR\nItems: ${items}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
+    const rzp = new window.Razorpay({
+      key: 'rzp_live_StUN8QoR2STezo',
+      amount: total * 100,
+      currency: 'INR',
+      name: 'Being Sevak Charitable Trust',
+      description: 'Donation - ' + items,
+      image: '../logo11.png',
+      handler: function (response) {
+        window.location.href = 'payment/success.html?payment_id=' + response.razorpay_payment_id + '&amount=' + total + '&name=' + encodeURIComponent(name);
+      },
+      prefill: { name, email, contact: '+91' + phone },
+      notes: { missions: items },
+      theme: { color: '#315371' }
+    });
+    rzp.on('payment.failed', function (response) {
+      window.location.href = 'payment/failure.html?error=' + encodeURIComponent(response.error.description);
+    });
+    rzp.open();
+  };
+
+  const handleGooglePay = () => {
+    if (total === 0) {
+      setShowEmptyMsg(true);
+      setTimeout(() => setShowEmptyMsg(false), 3000);
+      return;
+    }
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!email) { alert('Please enter your email.'); return; }
+    if (!phone || phone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
+    const items = Object.entries(cartQty).filter(([, q]) => q > 0).map(([k, q]) => k + 'x' + q).join(', ');
+    const rzp = new window.Razorpay({
+      key: 'rzp_live_StUN8QoR2STezo',
+      amount: total * 100,
+      currency: 'INR',
+      name: 'Being Sevak Charitable Trust',
+      description: 'Donation - ' + items,
+      image: '../logo11.png',
+      handler: function (response) {
+        window.location.href = 'payment/success.html?payment_id=' + response.razorpay_payment_id + '&amount=' + total + '&name=' + encodeURIComponent(name);
+      },
+      prefill: { name, email, contact: '+91' + phone },
+      notes: { missions: items },
+      theme: { color: '#315371' },
+      config: { display: { blocks: { upi: { instruments: [{ method: 'upi' }] } }, preferences: { show_default_blocks: true } } }
+    });
+    rzp.on('payment.failed', function (response) {
+      window.location.href = 'payment/failure.html?error=' + encodeURIComponent(response.error.description);
+    });
+    rzp.open();
   };
 
   const handlePhoneChange = (e) => {
@@ -590,7 +638,7 @@ export default function IndividualDonation() {
               <span className="basket-total-label">Total</span>
               <span className="basket-total-amt">{'\u20B9'}{total.toLocaleString('en-IN')} INR</span>
             </div>
-            <button className="gpay-btn" onClick={() => proceedDonate()}>Google Pay</button>
+            <button className="gpay-btn" onClick={() => handleGooglePay()}>Google Pay</button>
             <button className="basket-donate-btn" onClick={() => proceedDonate()}>
               <i className="fas fa-heart"></i> Donate Now
             </button>
