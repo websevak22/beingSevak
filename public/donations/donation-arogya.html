@@ -718,6 +718,14 @@ function handleDonate() {
   const name = document.getElementById('fname').value;
   const email = document.getElementById('email').value;
   const phone = document.getElementById('phone').value;
+  const phoneErr = document.getElementById('phone-error');
+  if (!phone || phone.length !== 10) {
+    phoneErr.textContent = 'Phone number must contain 10 digits.';
+    phoneErr.classList.add('show');
+    clearTimeout(window._phoneErrTimer);
+    window._phoneErrTimer = setTimeout(() => phoneErr.classList.remove('show'), 3000);
+    return;
+  }
   const activeTab = document.querySelector('.arogya-tab.active');
   const programme = activeTab ? activeTab.textContent.trim() : 'General Donation';
   donateWithRazorpay({
