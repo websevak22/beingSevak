@@ -195,7 +195,7 @@ const ContactUs = () => {
               <div className="icon-box"><i className="fas fa-phone"></i></div>
               <div>
                 <h4>Phone</h4>
-                <p>+91 8879035035</p>
+                <p><a href="tel:+918879035035" style={{color:'inherit',textDecoration:'none'}}>+91 8879035035</a></p>
               </div>
             </div>
 

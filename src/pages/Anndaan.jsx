@@ -172,6 +172,8 @@ export default function Anndaan() {
           .anndaan-page .snackdrive-container, .anndaan-page .nutritioncare-wrap { grid-template-columns: 1fr; }
           .anndaan-page .sweetmeal-grid { grid-template-columns: 1fr 1fr; }
           .anndaan-page .snackdrive-images { grid-template-columns: repeat(2,1fr); }
+          .anndaan-page .nutritioncare-card-row { justify-content: center; }
+          .anndaan-page .nutrition-mini-card { min-width: 0; }
         }
         @media (max-width: 600px) {
           .anndaan-page .annaseva-hero-content h1 { font-size: 38px; }
@@ -184,6 +186,8 @@ export default function Anndaan() {
           .anndaan-page .mealwave-highlight-box div { width: 100%; min-height: auto; padding: 20px; }
           .anndaan-page .snackdrive-images { grid-template-columns: 1fr; }
           .anndaan-page .kitcare-wrapper { padding: 40px 8%; }
+          .anndaan-page .nutritioncare-card-row { justify-content: center; }
+          .anndaan-page .nutrition-mini-card { min-width: 0; width: 100%; padding: 20px 30px; text-align: center; }
         }
       `}</style>
 

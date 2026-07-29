@@ -2244,7 +2244,7 @@ body{
 
     .slider-track {
         gap: 20px;
-    animation: scrollActivities 5s linear infinite;
+    animation: scrollActivities 30s linear infinite;
     }
 }
 
@@ -2737,6 +2737,16 @@ body{
 
 }
 
+@media(max-width: 768px){
+  .about-right .read-btn{
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 /*================= About us ================= */
 
@@ -3023,7 +3033,7 @@ body{
   align-items:center;
   gap:60px;
   width:max-content;
- animation:scroll 20s linear infinite;
+ animation:scroll 5s linear infinite;
 }
 
 /* BOX */
@@ -3359,6 +3369,14 @@ body{
 
   .eye-content p{
     font-size:15px;
+  }
+
+  .donate-btn{
+    display:block;
+    text-align:center;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
   }
 }
 
@@ -4386,8 +4404,24 @@ body{
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+  .featured-slider-box {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .featured-slider-box::-webkit-scrollbar {
+    display: none;
+  }
   .featured-slide {
+    display: grid !important;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     grid-template-columns: 1fr;
+    min-width: 0;
   }
   .featured-card {
     height: 320px;
@@ -4581,6 +4615,18 @@ body{
   gap: 8px;
 }
 .footer-col p i { color: var(--pink); margin-top: 2px; flex-shrink: 0; }
+.footer-contact-link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-contact-link:hover { color: var(--pink); }
+.footer-contact-link i { color: var(--pink); margin-top: 2px; flex-shrink: 0; }
 .reg-badge {
   display: inline-block;
   background: rgba(255,255,255,0.1);
@@ -4857,17 +4903,17 @@ body{
   .quick-donate-bar { padding: 6px 0; }
   .qd-inner {
     flex-wrap: nowrap;
-    justify-content: center;
-    gap: 6px;
-    padding: 0 8px 0 0;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 8px 0 8px;
   }
   .currency-select { padding: 6px 4px; font-size: 12px; gap: 2px; flex-shrink: 0; }
-  .amount-input-wrap { flex: 0 0 50px; min-width: 0; }
-  .amount-input { width: 100%; padding: 6px 6px; font-size: 13px; }
+  .amount-input-wrap { flex: 0 0 75px; min-width: 0; }
+  .amount-input { width: 100%; padding: 7px 10px; font-size: 13px; }
   .preset-amt { display: none; }
   .payment-icons { display: none; }
   .quick-donate-pulse-wrap { flex-shrink: 0; }
-  .quick-donate-btn { width: auto; padding: 6px 36px; font-size: 11px; text-align: center; }
+  .quick-donate-btn { width: auto; padding: 10px 28px; font-size: 13px; text-align: center; }
   .causes-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-num { font-size: 32px; }

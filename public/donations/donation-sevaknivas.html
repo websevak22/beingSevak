@@ -698,6 +698,14 @@ function handleDonate() {
   const name = document.getElementById('donorName').value;
   const email = document.getElementById('donorEmail').value;
   const phone = document.getElementById('donorPhone').value;
+  const phoneErr = document.getElementById('phone-error');
+  if (!phone || phone.length !== 10) {
+    phoneErr.textContent = 'Phone number must contain 10 digits.';
+    phoneErr.classList.add('show');
+    clearTimeout(window._phoneErrTimer);
+    window._phoneErrTimer = setTimeout(() => phoneErr.classList.remove('show'), 3000);
+    return;
+  }
   const desc = currentCause + ' | ' + currentFreq;
 
   donateWithRazorpay({ amount, name, email, phone, description: desc, mission: currentMission });

@@ -36,6 +36,36 @@ export default function Home() {
   // Featured Projects
   const [currentFeatured, setCurrentFeatured] = useState(0);
   const totalFeaturedSlides = 3;
+  const featuredSliderRef = useRef(null);
+
+  useEffect(() => {
+    const box = featuredSliderRef.current;
+    if (!box) return;
+    const isMobile = () => window.innerWidth <= 768;
+    let ticking = false;
+    const onScroll = () => {
+      if (!isMobile() || ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollLeft = box.scrollLeft;
+        const slideWidth = box.offsetWidth;
+        if (slideWidth > 0) {
+          const idx = Math.round(scrollLeft / slideWidth);
+          setCurrentFeatured(Math.max(0, Math.min(idx, totalFeaturedSlides - 1)));
+        }
+        ticking = false;
+      });
+    };
+    box.addEventListener('scroll', onScroll, { passive: true });
+    return () => box.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToFeaturedSlide = (idx) => {
+    const box = featuredSliderRef.current;
+    if (!box || window.innerWidth > 768) return;
+    const slideWidth = box.offsetWidth;
+    box.scrollTo({ left: idx * slideWidth, behavior: 'smooth' });
+  };
 
   // Impact Stats
   const impactRef = useRef(null);
@@ -98,7 +128,55 @@ export default function Home() {
   const basketTotal = Object.keys(cartQty).reduce((s, k) => s + cartQty[k] * UNIT_PRICE[k], 0);
   const proceedDonate = () => {
     if (basketTotal === 0) { setShowEmptyMsg(true); setTimeout(() => setShowEmptyMsg(false), 3000); return; }
-    alert(`Donation: \u20B9${basketTotal.toLocaleString('en-IN')} INR\nName: ${basketName}\nEmail: ${basketEmail}\nPhone: ${basketPhone}`);
+    if (!basketName) { alert('Please enter your name.'); return; }
+    if (!basketEmail) { alert('Please enter your email.'); return; }
+    if (!basketPhone || basketPhone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
+    const items = Object.entries(cartQty).filter(([, q]) => q > 0).map(([k, q]) => k + 'x' + q).join(', ');
+    const rzp = new window.Razorpay({
+      key: 'rzp_live_StUN8QoR2STezo',
+      amount: basketTotal * 100,
+      currency: 'INR',
+      name: 'Being Sevak Charitable Trust',
+      description: 'Donation - ' + items,
+      image: '../logo11.png',
+      handler: function (response) {
+        window.location.href = 'payment/success.html?payment_id=' + response.razorpay_payment_id + '&amount=' + basketTotal + '&name=' + encodeURIComponent(basketName);
+      },
+      prefill: { name: basketName, email: basketEmail, contact: '+91' + basketPhone },
+      notes: { missions: items },
+      theme: { color: '#315371' }
+    });
+    rzp.on('payment.failed', function (response) {
+      window.location.href = 'payment/failure.html?error=' + encodeURIComponent(response.error.description);
+    });
+    rzp.open();
+  };
+
+  const handleGooglePay = () => {
+    if (basketTotal === 0) { setShowEmptyMsg(true); setTimeout(() => setShowEmptyMsg(false), 3000); return; }
+    if (!basketName) { alert('Please enter your name.'); return; }
+    if (!basketEmail) { alert('Please enter your email.'); return; }
+    if (!basketPhone || basketPhone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
+    const items = Object.entries(cartQty).filter(([, q]) => q > 0).map(([k, q]) => k + 'x' + q).join(', ');
+    const rzp = new window.Razorpay({
+      key: 'rzp_live_StUN8QoR2STezo',
+      amount: basketTotal * 100,
+      currency: 'INR',
+      name: 'Being Sevak Charitable Trust',
+      description: 'Donation - ' + items,
+      image: '../logo11.png',
+      handler: function (response) {
+        window.location.href = 'payment/success.html?payment_id=' + response.razorpay_payment_id + '&amount=' + basketTotal + '&name=' + encodeURIComponent(basketName);
+      },
+      prefill: { name: basketName, email: basketEmail, contact: '+91' + basketPhone },
+      notes: { missions: items },
+      theme: { color: '#315371' },
+      config: { display: { blocks: { upi: { instruments: [{ method: 'upi' }] } }, preferences: { show_default_blocks: true } } }
+    });
+    rzp.on('payment.failed', function (response) {
+      window.location.href = 'payment/failure.html?error=' + encodeURIComponent(response.error.description);
+    });
+    rzp.open();
   };
 
   const handleBasketPhoneChange = (e) => {
@@ -1316,7 +1394,7 @@ export default function Home() {
           <h2>Featured <span className="accent">Projects</span></h2>
           <p>Make a direct impact with these urgent campaigns</p>
         </div>
-        <div className="featured-slider-box">
+        <div className="featured-slider-box" ref={featuredSliderRef}>
           <div className={`featured-slide ${currentFeatured === 0 ? 'active' : ''}`}>
             <div className="featured-card">
               <div className="feat-img" style={{ backgroundImage: "url('images/Matrimonial.jpeg')" }}></div>
@@ -1383,7 +1461,7 @@ export default function Home() {
             <span
               key={i}
               className={`featured-dot ${currentFeatured === i ? 'active' : ''}`}
-              onClick={() => setCurrentFeatured(i)}
+              onClick={() => { setCurrentFeatured(i); scrollToFeaturedSlide(i); }}
             ></span>
           ))}
         </div>
@@ -1454,7 +1532,7 @@ export default function Home() {
               <span className="basket-total-label">Total</span>
               <span className="basket-total-amt">{'\u20B9'}{basketTotal.toLocaleString('en-IN')} INR</span>
             </div>
-            <button className="gpay-btn" onClick={proceedDonate}>Google Pay</button>
+            <button className="gpay-btn" onClick={handleGooglePay}>Google Pay</button>
             <button className="basket-donate-btn" onClick={proceedDonate}>
               <i className="fas fa-heart"></i> Donate Now
             </button>

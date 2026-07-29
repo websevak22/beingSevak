@@ -63,8 +63,8 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
-          <p><i className="fas fa-phone"></i>+91 8879035035</p>
-          <p><i className="fas fa-envelope"></i>being.sevak@gmail.com</p>
+          <a href="tel:+918879035035" className="footer-contact-link"><i className="fas fa-phone"></i>+91 8879035035</a>
+          <a href="mailto:being.sevak@gmail.com" className="footer-contact-link"><i className="fas fa-envelope"></i>being.sevak@gmail.com</a>
           <p><i className="fas fa-map-marker-alt"></i> MUMBAI, INDIA</p>
           <div className="footer-badges">
             <a href="/brochure/BSCT E-Brochure.pdf" className="brochure-btn" download>
