@@ -24,7 +24,7 @@ const MissionBezubaan = () => {
 
         .mission-bezubaan .tax-box {
           width: 100%; height: 70px; display: flex; justify-content: center; align-items: center;
-          text-align: center; background: linear-gradient(135deg, #00a3da, #315270);
+          text-align: center; background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
           color: #fff; margin: 20px 0; padding: 10px; border-radius: 0;
           box-shadow: 0 15px 40px rgba(0,0,0,0.15); position: relative; overflow: hidden; transition: 0.4s ease;
         }
