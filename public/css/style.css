@@ -3049,7 +3049,7 @@ body{
  animation:scroll 5s linear infinite;
 }
 @media(min-width:769px){
-  .marquee-content{animation-duration:20s}
+  .marquee-content{animation-duration:4s}
 }
 
 /* BOX */
