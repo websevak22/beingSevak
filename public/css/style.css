@@ -1180,10 +1180,11 @@ input, select { font-family: inherit; outline: none; border: none; }
     grid-template-columns:1fr;
     padding:20px;
   }
-
-  .project-card{
-    height:100px;
-  }
+  .projects-hero { height: 130px; }
+  .projects-hero h1 { font-size: 32px; }
+  .projects-hero p { font-size: 14px; }
+  .project-card{ height:100px; padding: 18px; }
+  .marquee .project-card { min-width: 140px; }
 }
 
 
@@ -1334,6 +1335,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 }
 .marquee .projects-grid{display:flex;flex-wrap:nowrap;}
 .marquee .project-card{flex-shrink:0;min-width:180px;}
+.marquee .project-card img{width:100%;height:100%;object-fit:contain;border-radius:12px;}
 
 /* CARD */
 .project-card{
@@ -4990,7 +4992,9 @@ body{
   .projects-hero { height: 100px; }
   .projects-hero h1 { font-size: 22px; }
   .projects-hero p { font-size: 12px; }
-  .project-card { min-width: 100px; height: 120px; border-radius: 14px; }
+  .project-card { min-width: 100px; height: 120px; border-radius: 14px; padding: 12px; }
+  .marquee .project-card { min-width: 120px; flex-shrink: 0; }
+  .projects-grid { padding: 30px 15px; gap: 12px; }
   .month-modal-content { max-width: 98vw; border-radius: 10px; }
   .month-modal-content img { max-width: 98vw; max-height: 70vh; border-radius: 10px; }
   .month-modal-close, .month-modal-download { width: 32px; height: 32px; font-size: 14px; top: 6px; }

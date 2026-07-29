@@ -22,7 +22,7 @@ export default function MissionEco() {
 
         .mission-eco .tax-box {
           width: 100%; height: 70px; display: flex; justify-content: center; align-items: center;
-          text-align: center; background: linear-gradient(135deg, #00a3da, #315270); color: #fff;
+          text-align: center; background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%); color: #fff;
           margin: 10px 0; padding: 10px; position: relative; overflow: hidden; transition: 0.4s ease;
         }
         .mission-eco .tax-box h1 { font-size: 28px; font-weight: 700; position: relative; z-index: 2; }
