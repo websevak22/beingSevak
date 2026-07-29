@@ -102,7 +102,7 @@ export default function ImpactSewingMachine() {
               </div>
             </div>
             <div className="sewing-image">
-              <img src="/images/g94.jpg" alt="" />
+              <img src="/images/g94.webp" alt="" />
             </div>
           </div>
 
@@ -144,9 +144,9 @@ export default function ImpactSewingMachine() {
           <p>Explore glimpses of our initiatives, community outreach programs, and the positive impact created through collective efforts.</p>
         </div>
         <div className="shital-gallery">
-          <div className="shital-gallery-item"><img src="/images/g91.png" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g92.png" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g93.png" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g91.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g92.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g93.webp" alt="" /></div>
         </div>
       </section>
     </>

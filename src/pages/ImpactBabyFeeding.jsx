@@ -79,7 +79,7 @@ export default function ImpactBabyFeeding() {
 
           <div className="baby-grid">
             <div className="baby-image">
-              <img src="/images/g71.png" alt="Baby Feeding Kit Support" />
+              <img src="/images/g1.jpeg" alt="Baby Feeding Kit Support" />
             </div>
             <div className="baby-content">
               <div className="baby-card">
@@ -139,9 +139,9 @@ export default function ImpactBabyFeeding() {
           <p>Explore glimpses of our initiatives, community outreach programs, and the positive impact created through collective efforts.</p>
         </div>
         <div className="shital-gallery">
-          <div className="shital-gallery-item"><img src="/images/g72.png" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g73.png" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g70.png" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g2.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g3.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g4.webp" alt="" /></div>
         </div>
       </section>
     </>

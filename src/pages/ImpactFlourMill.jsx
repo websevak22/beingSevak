@@ -77,7 +77,7 @@ export default function ImpactFlourMill() {
 
           <div className="flourmill-grid">
             <div className="flourmill-image">
-              <img src="/images/g41.jpg" alt="Flour Mill Support" />
+              <img src="/images/g41.webp" alt="Flour Mill Support" />
             </div>
             <div className="flourmill-content">
               <div className="flourmill-card">
@@ -137,9 +137,9 @@ export default function ImpactFlourMill() {
           <p>Explore glimpses of our initiatives, community outreach programs, and the positive impact created through collective efforts.</p>
         </div>
         <div className="shital-gallery">
-          <div className="shital-gallery-item"><img src="/images/g42.jpg" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g43.jpg" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g44.jpg" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g42.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g43.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g44.webp" alt="" /></div>
         </div>
       </section>
     </>

@@ -79,7 +79,7 @@ export default function ImpactEmergencyMedical() {
 
           <div className="medical-grid">
             <div className="medical-image">
-              <img src="/images/g54.png" alt="Emergency Medical Support" />
+              <img src="/images/g54.webp" alt="Emergency Medical Support" />
             </div>
             <div className="medical-content">
               <div className="medical-card">
@@ -140,9 +140,9 @@ export default function ImpactEmergencyMedical() {
           <p>Explore glimpses of our initiatives, community outreach programs, and the positive impact created through collective efforts.</p>
         </div>
         <div className="shital-gallery">
-          <div className="shital-gallery-item"><img src="/images/g51.png" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g52.png" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g53.png" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g51.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g52.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g53.webp" alt="" /></div>
         </div>
       </section>
     </>

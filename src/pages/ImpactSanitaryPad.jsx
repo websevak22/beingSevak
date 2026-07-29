@@ -81,7 +81,7 @@ export default function ImpactSanitaryPad() {
 
           <div className="sanitary-grid">
             <div className="sanitary-image">
-              <img src="/images/g24.jpg" alt="Sanitary Pad Vending Machine" />
+              <img src="/images/g24.webp" alt="Sanitary Pad Vending Machine" />
             </div>
             <div className="sanitary-content">
               <div className="sanitary-card">
@@ -141,8 +141,8 @@ export default function ImpactSanitaryPad() {
           <p>Explore glimpses of our initiatives, community outreach programs, and the positive impact created through collective efforts.</p>
         </div>
         <div className="shital-gallery">
-          <div className="shital-gallery-item"><img src="/images/g21.jpg" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g22.jpg" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g21.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g22.webp" alt="" /></div>
           <div className="shital-gallery-item"><img src="/images/g23.jpg" alt="" /></div>
         </div>
       </section>

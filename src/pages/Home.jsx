@@ -1198,35 +1198,20 @@ export default function Home() {
             <p>Together with our partners, we work to bring hope, care, and support to those in need</p>
           </div>
         </div>
-        <marquee behavior="scroll" direction="left" scrollamount="8" loop="-1">
-          <div className="projects-grid">
-            <div className="project-card"><img src="images/1.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/2.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/3.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/4.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/5.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/6.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/7.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/8.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/9.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/10.jpg" alt="" /></div>
-            <div className="project-card"><img src="images/11.png" alt="" /></div>
-            <div className="project-card"><img src="images/12.png" alt="" /></div>
-            <div className="project-card"><img src="images/13.png" alt="" /></div>
-            <div className="project-card"><img src="images/14.png" alt="" /></div>
-            <div className="project-card"><img src="images/15.png" alt="" /></div>
-            <div className="project-card"><img src="images/16.png" alt="" /></div>
-            <div className="project-card"><img src="images/17.png" alt="" /></div>
-            <div className="project-card"><img src="images/18.png" alt="" /></div>
-            <div className="project-card"><img src="images/19.png" alt="" /></div>
-            <div className="project-card"><img src="images/20.png" alt="" /></div>
-            <div className="project-card"><img src="images/21.png" alt="" /></div>
-            <div className="project-card"><img src="images/22.png" alt="" /></div>
-            <div className="project-card"><img src="images/23.png" alt="" /></div>
-            <div className="project-card"><img src="images/24.png" alt="" /></div>
-            <div className="project-card"><img src="images/25.png" alt="" /></div>
+        <div className="partners-marquee">
+          <div className="partners-track">
+            <div className="projects-grid">
+              {['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.png','12.png','13.png','14.png','15.png','16.png','17.png','18.png','19.png','20.png','21.png','22.png','23.png','24.png','25.png'].map((src,i)=>(
+                <div className="project-card" key={i}><img src={'images/'+src} alt="" /></div>
+              ))}
+            </div>
+            <div className="projects-grid duplicate">
+              {['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.png','12.png','13.png','14.png','15.png','16.png','17.png','18.png','19.png','20.png','21.png','22.png','23.png','24.png','25.png'].map((src,i)=>(
+                <div className="project-card" key={'d'+i}><img src={'images/'+src} alt="" /></div>
+              ))}
+            </div>
           </div>
-        </marquee>
+        </div>
       </section>
 
       {/* IMPACT STATS */}

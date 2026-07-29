@@ -236,7 +236,7 @@ export default function ImpactTricycle() {
 
           <div className="tricycle-grid">
             <div className="tricycle-image">
-              <img src="/images/g64.png" alt="Tricycle Distribution" />
+              <img src="/images/g64.webp" alt="Tricycle Distribution" />
             </div>
             <div className="tricycle-content">
               <div className="tricycle-card">
@@ -298,13 +298,13 @@ export default function ImpactTricycle() {
         </div>
         <div className="shital-gallery">
           <div className="shital-gallery-item">
-            <img src="/images/g61.png" alt="" />
+            <img src="/images/g61.webp" alt="" />
           </div>
           <div className="shital-gallery-item">
-            <img src="/images/g62.png" alt="" />
+            <img src="/images/g62.webp" alt="" />
           </div>
           <div className="shital-gallery-item">
-            <img src="/images/g63.png" alt="" />
+            <img src="/images/g63.webp" alt="" />
           </div>
         </div>
       </section>
