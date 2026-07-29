@@ -1275,7 +1275,7 @@ export default function Home() {
             <p>Supporting this NGO has been one of the most meaningful decisions of my life. Seeing smiles on children's faces and families getting support gives real happiness.</p>
             <div className="donor-info">
               <h4>Riya Sharma</h4>
-              <span>Supportive Donor</span>
+              <span>Supportive Donor/////mmmmmm</span>
             </div>
           </div>
           <div className="testimonial-card">
