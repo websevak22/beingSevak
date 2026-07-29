@@ -3031,7 +3031,7 @@ body{
   align-items:center;
   gap:60px;
   width:max-content;
- animation:scroll 20s linear infinite;
+ animation:scroll 5s linear infinite;
 }
 
 /* BOX */
