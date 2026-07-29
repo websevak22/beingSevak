@@ -77,7 +77,7 @@ export default function ImpactRozgaarBooth() {
 
           <div className="rozgaar-grid">
             <div className="rozgaar-image">
-              <img src="/images/g15.jpg" alt="Rozgaar Booth Repairing" />
+              <img src="/images/g15.webp" alt="Rozgaar Booth Repairing" />
             </div>
             <div className="rozgaar-content">
               <div className="rozgaar-card">
@@ -137,9 +137,9 @@ export default function ImpactRozgaarBooth() {
           <p>Explore glimpses of our initiatives, community outreach programs, and the positive impact created through collective efforts.</p>
         </div>
         <div className="shital-gallery">
-          <div className="shital-gallery-item"><img src="/images/g11.jpg" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g12.jpg" alt="" /></div>
-          <div className="shital-gallery-item"><img src="/images/g14.jpg" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g11.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g12.webp" alt="" /></div>
+          <div className="shital-gallery-item"><img src="/images/g14.webp" alt="" /></div>
         </div>
       </section>
     </>

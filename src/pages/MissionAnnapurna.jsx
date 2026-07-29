@@ -231,6 +231,7 @@ const MissionAnnapurna = () => {
           .mission-annapurna .testimonial-card p { font-size: 14px; }
           .mission-annapurna .tax-box { height: auto; padding: 16px; }
           .mission-annapurna .tax-box p { font-size: 14px; }
+          #donate iframe { height: 850px !important; }
         }
       `}</style>
 
